@@ -1,24 +1,17 @@
-const express = require('express');
-const router = express.Router();
+import express from 'express'
+import {router }from './routes/examGroup.js'
 
+const app = express()
+
+
+app.use(bodyParser.json()); 
 let exams = [
-    { id: 1, name: "Midterm Exam" },
-    { id: 2, name: "Final Exam" }
+  { id: 1, name: 'Math Exam', date: '2025-03-25' },
+  { id: 2, name: 'Science Exam', date: '2025-03-26' }
 ];
 
-// GET /exams - Returns all exams
-router.get('/', (req, res) => {
-    res.json(exams);
-    });
-    
-    // POST /exams - Adds a new exam
-    router.post('/', (req, res) => {
-    const newExam = {
-    id: exams.length + 1,
-    name: req.body.name
-    };
-    exams.push(newExam);
-    res.status(201).json(newExam);
-    });
-  
-module.exports = router;
+app.use('/', router)
+//COMMENT FOR CONFLICT
+app.listen(3000, () => {
+  console.log('Server running on port : 3000')
+})
