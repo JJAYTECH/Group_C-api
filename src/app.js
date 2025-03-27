@@ -1,6 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser' 
-import router from './routes/routesGroup.js'
+import router from '../routes/examGroup.js';
 
 const app = express()
 

@@ -1,15 +1,25 @@
 {
-  "name": "quiz-4---semi-final",
+  "name": "group_c-api",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJAYTECH/Group_C-api.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
+  "bugs": {
+    "url": "https://github.com/JJAYTECH/Group_C-api/issues"
+  },
+  "homepage": "https://github.com/JJAYTECH/Group_C-api#readme",
   "dependencies": {
-    "package-name": "^0.1.0"
-  }
+    "body-parser": "^1.19.1",
+    "express": "^4.21.2"
+  },
+  "type": "module"
 }
