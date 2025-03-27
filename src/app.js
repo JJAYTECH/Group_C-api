@@ -1,9 +1,24 @@
-const express = require("express");
-const app = express();
-const examGroupRoute = require("./routes/examGroup");
+const express = require('express');
+const router = express.Router();
 
-app.use("/api", examGroupRoute);
+let exams = [
+    { id: 1, name: "Midterm Exam" },
+    { id: 2, name: "Final Exam" }
+];
 
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
-});
+// GET /exams - Returns all exams
+router.get('/', (req, res) => {
+    res.json(exams);
+    });
+    
+    // POST /exams - Adds a new exam
+    router.post('/', (req, res) => {
+    const newExam = {
+    id: exams.length + 1,
+    name: req.body.name
+    };
+    exams.push(newExam);
+    res.status(201).json(newExam);
+    });
+  
+module.exports = router;
